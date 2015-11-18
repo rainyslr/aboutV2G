@@ -37,5 +37,6 @@ if (m_sent < m_count)
     }
 }
 ```
-###项目各个App运行机制设计思路
+
+##项目各个App运行机制设计思路
 App的运行机制上也仿照这样来写。大家的模块里面，如果需要在周期性执行的，就在函数内部Schedule自身。然后每个模块写一个DoInitialize函数，用于本模块的初始化工作。而App的DoInitialize函数则调用各个模块的DoInitialize函数，以及完成其他初始化工作。
